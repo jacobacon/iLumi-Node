@@ -1,0 +1,10 @@
+Service UUID: "F000F0C0-0451-4000-B000-000000000000"
+16 Bit UUID: "61632"
+
+Color Set Characteristic
+Characteristic UUID: "F000F0C1-0451-4000-B000-000000000000" 
+
+
+Color is a Byte Array made of (rgbw, brightness) and other variables, still finding them.
+
+

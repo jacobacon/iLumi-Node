@@ -1,0 +1,22 @@
+{
+  "name": "ilumi-node",
+  "version": "0.0.1",
+  "description": "Node app for changing colors on iLumi smart bulb",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "keywords": [
+    "ilumi",
+    "ble",
+    "bluetooth",
+    "smart",
+    "bulb"
+  ],
+  "author": "Jacob Beneski",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "color-convert": "^1.9.0",
+    "noble": "^1.8.1"
+  }
+}
