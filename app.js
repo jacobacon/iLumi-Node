@@ -1,7 +1,17 @@
 var noble = require('noble');
 var convert = require('color-convert');
 
-var bluetoothHelper = require('./bluetooth.js');
+
+
+var color = new Object();
+
+
+    color.red = 0;
+    color.green = 0;
+    color.blue = 0;
+    color.white = 255;
+    color.brightness = 255;
+
 
 
 noble.on('stateChange', function (state) {
@@ -41,14 +51,23 @@ function connectToPeripheral(peripheral) {
 
 
                 //changeColor(colorCharacteristic, '00', 'cyan');
-                var data = new Buffer('ff0000ff00ff00ff00ff', 'hex');
+                //var data = new Buffer("3c2a030668341500140000000000000000000000", "hex");
+               // var data = new Buffer("3c2a0306463415000a005045dbde06ff04000000",'hex');
+
+                //var data = new Buffer('3c2a0306423415000a00504d8b2b06ff05000000','hex');
+                var data = new Buffer(5);
+                data.writeUInt8(0x255, 0);
+                data.writeUInt8(0x255, 1);
+                data.writeUInt8(0x255, 2);
+                data.writeUInt8(0x255, 3);
+                data.writeUInt8(0x255, 4);
                 colorCharacteristic.write(data, true, function (err) {
-                    if (!err){
-                        console.log('Everything worked?!');
-                        process.exit();
+                    if (err) {
+                        console.log(err);
+                       // process.exit(1);
                     } else {
-                        concole.log(err);
-                        process.exit(1);
+                        console.log('Everything worked?!');
+                       // process.exit();
                     }
                 });
 
